@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import sqlalchemy
 import pymysql
-import pandas as pd
 import sqlalchemy
 from sqlalchemy import text
 import socket
