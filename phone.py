@@ -6,11 +6,16 @@ import sqlalchemy
 
 #df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
 df = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
-state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
-districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
-districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
-app_opening = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
-user_device = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv")
+#state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
+state = pd.read_csv("Longitude_Latitude_State_Table3.csv")
+#districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
+districts = pd.read_csv("Data_Map_Districts_Longitude_Latitude2.csv")
+#districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
+districts_tran = pd.read_csv("Data_Map_Transaction4.csv")
+#app_opening = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+app_opening = pd.read_csv("Data_Map_User_Table5.csv")
+#user_device = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv")
+user_device = pd.read_csv("Data_Aggregated_User_Table6.csv")
 
 
 state = state.sort_values(by='state')
@@ -179,7 +184,8 @@ with payment_analysis:
     st.subheader(':violet[Payment type Analysis -> 2018 - 2022:]')
     # querypa = 'select * from agg_transaction_table'
     # payment_mode = pd.read_sql(querypa, con=connection)
-    payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    #payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    payment_mode = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
     pie_pay_mode_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
                                                               'assam', 'bihar', 'chandigarh', 'chhattisgarh',
                                                               'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
@@ -229,7 +235,8 @@ with transac_yearwise:
                                 ('Recharge & bill payments', 'Peer-to-peer payments', 'Merchant payments', 'Financial Services', 'Others'), key='transactype')
     transac_values = st.selectbox(
         'Please select the values to visualize', ('Total Transactions count', 'Total Amount'), key='transacvalues')
-    payment_mode_yearwise = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    #payment_mode_yearwise = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    payment_mode_yearwise = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
 
     # querypay_year = 'select * from agg_transaction_table'
     # payment_mode_yearwise = pd.read_sql(querypay_year, con=connection)
@@ -266,7 +273,8 @@ with st.sidebar:
     # --------------------------Bar chart of overall india user device analysis --------------------------------------------------------------
     # query_device = 'select * from agg_userbydevice_table'
     # user_device_overall = pd.read_sql(query_device, con=connection)
-    user_device_overall = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv", index_col=0)
+    #user_device_overall = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv", index_col=0)
+    user_device_overall = pd.read_csv("Data_Aggregated_User_Table6.csv", index_col=0)
     overall_device = user_device_overall.groupby(['Brand Name', 'Year']).sum()
     overall_device.reset_index(inplace=True)
 
@@ -279,7 +287,8 @@ with st.sidebar:
     # --------------------------Bar chart of overall india registered and app opening --------------------------------------------------------
     # query_reg = 'select * from district_map_registering_table'
     # overall_reg = pd.read_sql(query5, con=connection)
-    overall_reg = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+    #overall_reg = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+    overall_reg = pd.read_csv("Data_Map_User_Table5.csv")
     overall_reg = overall_reg.groupby(['State', 'Year']).sum()
     overall_reg.reset_index(inplace=True)
 
