@@ -4,7 +4,8 @@ import plotly.express as px
 import sqlalchemy
 
 
-df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+#df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+df = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
 state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
 districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
 districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
