@@ -185,7 +185,7 @@ with payment_analysis:
     # querypa = 'select * from agg_transaction_table'
     # payment_mode = pd.read_sql(querypa, con=connection)
     #payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-    payment_mode = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
+    payment_mode = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
     pie_pay_mode_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
                                                               'assam', 'bihar', 'chandigarh', 'chhattisgarh',
                                                               'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
@@ -236,7 +236,7 @@ with transac_yearwise:
     transac_values = st.selectbox(
         'Please select the values to visualize', ('Total Transactions count', 'Total Amount'), key='transacvalues')
     #payment_mode_yearwise = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-    payment_mode_yearwise = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
+    payment_mode_yearwise = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
 
     # querypay_year = 'select * from agg_transaction_table'
     # payment_mode_yearwise = pd.read_sql(querypay_year, con=connection)
@@ -274,7 +274,7 @@ with st.sidebar:
     # query_device = 'select * from agg_userbydevice_table'
     # user_device_overall = pd.read_sql(query_device, con=connection)
     #user_device_overall = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv", index_col=0)
-    user_device_overall = pd.read_csv("Data_Aggregated_User_Table6.csv", index_col=0)
+    user_device_overall = pd.read_csv("phonepe/Data_Aggregated_User_Table6.csv", index_col=0)
     overall_device = user_device_overall.groupby(['Brand Name', 'Year']).sum()
     overall_device.reset_index(inplace=True)
 
@@ -288,7 +288,7 @@ with st.sidebar:
     # query_reg = 'select * from district_map_registering_table'
     # overall_reg = pd.read_sql(query5, con=connection)
     #overall_reg = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
-    overall_reg = pd.read_csv("Data_Map_User_Table5.csv")
+    overall_reg = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
     overall_reg = overall_reg.groupby(['State', 'Year']).sum()
     overall_reg.reset_index(inplace=True)
 
