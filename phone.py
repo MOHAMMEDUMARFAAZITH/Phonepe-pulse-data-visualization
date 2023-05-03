@@ -5,17 +5,17 @@ import sqlalchemy
 
 
 #df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-df = pd.read_csv("Data_Aggregated_Transaction_Table1.csv")
+df = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
 #state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
-state = pd.read_csv("Longitude_Latitude_State_Table3.csv")
+state = pd.read_csv("phonepe/Longitude_Latitude_State_Table3.csv")
 #districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
-districts = pd.read_csv("Data_Map_Districts_Longitude_Latitude2.csv")
+districts = pd.read_csv("phonepe/Data_Map_Districts_Longitude_Latitude2.csv")
 #districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
-districts_tran = pd.read_csv("Data_Map_Transaction4.csv")
+districts_tran = pd.read_csv("phonepe/Data_Map_Transaction4.csv")
 #app_opening = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
-app_opening = pd.read_csv("Data_Map_User_Table5.csv")
+app_opening = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
 #user_device = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv")
-user_device = pd.read_csv("Data_Aggregated_User_Table6.csv")
+user_device = pd.read_csv("phonepe/Data_Aggregated_User_Table6.csv")
 
 
 state = state.sort_values(by='state')
