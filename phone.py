@@ -251,7 +251,10 @@ with transac_yearwise:
     year_fig = px.bar(chart, x=['Year'], y=transac_values, color=transac_values, color_continuous_scale='armyrose',
                       title='Transacion analysis '+transac_state + ' regarding to '+transac_type)
     st.plotly_chart(year_fig)
-
+    
+    pay_bar = px.bar(pie_payment_mode, x='Payment Mode',
+                     y=pie_pay_mode_values, color='Payment Mode')
+    st.plotly_chart(pay_bar)
 
 
 # -------------------------------------------- Sidebar --> for overall india Data comparisons -------------------------------------------------
