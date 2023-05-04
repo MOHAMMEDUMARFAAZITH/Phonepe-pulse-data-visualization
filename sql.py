@@ -7,14 +7,27 @@ warnings.filterwarnings("ignore")
 import pymysql
 
 #Mysql server connection using sqlalchemy
-user = 'root'
-password = 'razith10113a'
-host = 'localhost'
-port = 3306
-database = 'dt4'
-connection = sqlalchemy.create_engine("mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database))
+# user = 'root'
+# password = 'razith10113a'
+# host = 'localhost'
+# port = 3306
+# database = 'dt4'
+# connection = sqlalchemy.create_engine("mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database))
 # connection=pymysql.connect(host='localhost',user = 'root',password = 'razith10113a',database = 'dt4')
 #Fetching datas from various resources
+
+
+comment='''Display the data'''
+host="localhost"
+port = 3306
+database="dt4"
+user="root"
+
+from sqlalchemy import create_engine
+try:
+    connection = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user,password,host,port,database))
+except (Exception, Error) as error:
+    print("Error while connecting to PostgreSQL", error)
 
 query1 = 'select * from data_aggregated_transaction_table1'
 df = pd.read_sql(query1, con=connection)
