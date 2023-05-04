@@ -23,11 +23,11 @@ port = 3306
 database="dt4"
 user="root"
 
-from sqlalchemy import create_engine
-try:
-    connection = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user,password,host,port,database))
-except (Exception) as error:
-    print("Error while connecting to PostgreSQL", error)
+# from sqlalchemy import create_engine
+# try:
+connection = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user,password,host,port,database))
+# except (Exception) as error:
+#     print("Error while connecting to PostgreSQL", error)
 
 query1 = 'select * from data_aggregated_transaction_table1'
 df = pd.read_sql(query1, con=connection)
