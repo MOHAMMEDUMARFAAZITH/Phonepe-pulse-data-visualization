@@ -26,7 +26,7 @@ user="root"
 from sqlalchemy import create_engine
 try:
     connection = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user,password,host,port,database))
-except (Exception, Error) as error:
+except (Exception, error) as error:
     print("Error while connecting to PostgreSQL", error)
 
 query1 = 'select * from data_aggregated_transaction_table1'
