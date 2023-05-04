@@ -2,15 +2,17 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import sqlalchemy
+warnings.filterwarnings("ignore")
+import pymysql
 
 #Mysql server connection using sqlalchemy
-user = 'root'
-password = 'razith10113a'
-host = 'localhost'
-port = 3306
-database = 'dt4'
-connection = sqlalchemy.create_engine("mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database))
-
+# user = 'root'
+# password = 'razith10113a'
+# host = 'localhost'
+# port = 3306
+# database = 'dt4'
+# connection = sqlalchemy.create_engine("mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database))
+connection=pymysql.connect(host='localhost',user = 'root',password = 'razith10113a',database = 'dt4')
 #Fetching datas from various resources
 
 query1 = 'select * from data_aggregated_transaction_table1'
