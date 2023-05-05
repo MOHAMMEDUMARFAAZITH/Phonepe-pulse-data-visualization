@@ -206,21 +206,21 @@ with transac_yearwise:
             st.plotly_chart(year_fig)
 
 with Overall_India_Analysisst:
-    st.subheader("Overall India Analysis")
-    overall_values = st.selectbox('Please select the values to visualize', ('Total Transactions count', 'Total Amount'), key='values')    
-    col1,col2= st.columns(2)
-    #Bar chart ofoverall india transacion data
-    with col1:
-    	    overall = new_df.groupby(['Year']).sum()
-    	    overall.reset_index(inplace=True)
-    	    overall = px.bar(overall, x='Year', y=overall_values, color=overall_values,title='Overall pattern of Transacion all over India', color_continuous_scale='sunset')
-    	    st.plotly_chart(overall)
-    with col2:
-    	    #Bar chart of overall india registered and app opening
-    	    #overall_reg = pd.read_sql(query5,con=connection)
-    	    #overall_reg= pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+	st.subheader("Overall India Analysis")
+	overall_values = st.selectbox('Please select the values to visualize', ('Total Transactions count', 'Total Amount'), key='values')    
+        col1,col2= st.columns(2)
+        #Bar chart ofoverall india transacion data
+	overall = new_df.groupby(['Year']).sum()
+    	overall.reset_index(inplace=True)
+    	overall = px.bar(overall, x='Year', y=overall_values, color=overall_values,title='Overall pattern of Transacion all over India', color_continuous_scale='sunset')
+    	#Bar chart of overall india registered and app opening
+    	#overall_reg = pd.read_sql(query5,con=connection)
+    	#overall_reg= pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
 	overall_reg = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
 	overall_reg = overall_reg.groupby(['State','Year']).sum()
 	overall_reg.reset_index(inplace=True)
 	overall_reg = px.bar(overall_reg, x='Year',y=['Registered Users Count',"App Openings"],barmode='group',title='Phonepe installation from 2018 - 2022')
-	st.plotly_chart(overall_reg)
+	with col1:
+	        st.plotly_chart(overall_reg)
+	with col2:
+	        st.plotly_chart(overall)
