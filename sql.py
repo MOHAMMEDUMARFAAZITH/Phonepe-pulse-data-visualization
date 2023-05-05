@@ -69,7 +69,7 @@ districts_final = pd.merge(districts_tran, districts,how='outer', on=['State', '
 
 with st.container():
     st.title('PhonePe Pulse Data Visualization(2018-2022)')
-    st.subheader('Registered user & App installed -> State and Districtwise')
+    st.subheader('Registered user count for Districtwise')
     col1,col2,col3= st.columns(3)
     with col1:    
             scatter_year = int(st.selectbox('Please select the Year',('2018', '2019', '2020', '2021', '2022')))
