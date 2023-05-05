@@ -5,7 +5,7 @@ import sqlalchemy
 
 #Mysql server connection using sqlalchemy
 #user = 'root'
-#password = 'razith10113a'
+#password = '***********'
 #host = 'localhost'
 #port = 3306
 #database = 'dt4'
