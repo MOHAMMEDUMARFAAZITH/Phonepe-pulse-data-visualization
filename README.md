@@ -27,27 +27,7 @@ I have created a dashboard to visualize Phonepe pulse Github repository data(htt
 
 Link for web app:
 https://mohammedumarfaazith-phonepe-pulse-data-visualization-sql-e111hm.streamlit.app/
-
-
-
-## Documentation
-
-- https://pandas.pydata.org/docs/
-- https://plotly.com/python/
-- https://docs.streamlit.io/
-
-
-
-
-## Features
-
-- Geographical analysis
-- User device analysis
-- Payment Types analysis
-- Transacion analysis of States
-- Overall india analysis
 ## Installation
-
 ```bash
   pip install pandas
   pip install plotly
@@ -55,4 +35,14 @@ https://mohammedumarfaazith-phonepe-pulse-data-visualization-sql-e111hm.streamli
   pip install PyMySQL
   pip install SQLAlchemy
 ```
-    
+## Features
+- Geographical analysis
+- User device analysis
+- Payment Types analysis
+- Transacion analysis of States
+- Overall india analysis
+
+## Documentation
+- https://pandas.pydata.org/docs/
+- https://plotly.com/python/
+- https://docs.streamlit.io/ 
