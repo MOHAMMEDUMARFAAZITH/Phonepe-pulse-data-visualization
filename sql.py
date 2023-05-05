@@ -11,7 +11,7 @@ import sqlalchemy
 #database = 'dt4'
 #connection = sqlalchemy.create_engine("mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database))
 
-#Fetching datas from various resources
+#Fetching datas from various resources:
 
 #query1 = 'select * from data_aggregated_transaction_table1'
 #df = pd.read_sql(query1, con=connection)
@@ -68,7 +68,7 @@ districts_tran.rename(columns={'Place Name': 'District'}, inplace=True)
 districts_final = pd.merge(districts_tran, districts,how='outer', on=['State', 'District'])
 
 with st.container():
-    st.title('PhonePe Pulse Data Visualization(2018-2022)')
+    st.title('PhonePe Pulse Data Visualization[2018-2022]')
     st.subheader('Registered user count for Districtwise')
     col1,col2,col3= st.columns(3)
     with col1:    
@@ -90,7 +90,7 @@ with st.container():
 geo_analysis, Device_analysis, payment_analysis, transac_yearwise,Overall_India_Analysisst = st.tabs(["Geographical analysis","User device analysis","Payment Types analysis", "Transacion analysis of States","Overall_India_Analysis"])
 
 with geo_analysis:
-    st.subheader('Transaction analysis->State and Districtwise')
+    st.subheader('State and Districtwise Transaction analysis')
     col1,col2= st.columns(2)
     with col1:
             Year = int(st.selectbox('Please select the Year',('2018', '2019', '2020', '2021', '2022'),key='Year'))
@@ -122,7 +122,7 @@ with geo_analysis:
     st.plotly_chart(fig)
 
 with Device_analysis:
-     st.subheader('User Device analysis->Statewise')
+     st.subheader('Statewise User Device analysis')
      col1,col2,col3= st.columns(3)
      with col1:
              tree_map_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh','assam', 'bihar', 'chandigarh', 'chhattisgarh',
@@ -148,7 +148,7 @@ with Device_analysis:
              st.plotly_chart(bar_user)
 
 with payment_analysis:
-    st.subheader('Payment type Analysis -> 2018 - 2022')
+    st.subheader('Payment type Analysis')
     #payment_mode = pd.read_sql(query1, con=connection)
     #payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
     payment_mode = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
@@ -175,7 +175,7 @@ with payment_analysis:
     	    st.plotly_chart(pie_pay_mode)
 
 with transac_yearwise:
-    st.subheader('Transaction analysis->Statewise')
+    st.subheader('Statewise Transaction analysis')
     col1,col2,col3,col4 = st.columns(4)
     with col1:
             transac_state = st.selectbox('Please select State',('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh','assam', 'bihar', 'chandigarh', 'chhattisgarh',
