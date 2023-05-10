@@ -15,33 +15,33 @@ import sqlalchemy
 
 #query1 = 'select * from data_aggregated_transaction_table1'
 #df = pd.read_sql(query1, con=connection)
-df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-#df = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
+#df = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+df = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
 
 #query2 = 'select * from longitude_latitude_state_table3'
 #state = pd.read_sql(query2, con=connection)
-state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
-#state = pd.read_csv("phonepe/Longitude_Latitude_State_Table3.csv")
+#state = pd.read_csv(r"E:\GUVI\phonepe\Longitude_Latitude_State_Table3.csv")
+state = pd.read_csv("phonepe/Longitude_Latitude_State_Table3.csv")
 
 #query3 = 'select * from data_map_districts_longitude_latitude2'
 #districts = pd.read_sql(query3, con=connection)
-districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
-#districts = pd.read_csv("phonepe/Data_Map_Districts_Longitude_Latitude2.csv")
+#districts = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Districts_Longitude_Latitude2.csv")
+districts = pd.read_csv("phonepe/Data_Map_Districts_Longitude_Latitude2.csv")
 
 #query4 = 'select * from data_map_transaction4'
 #districts_tran = pd.read_sql(query4, con=connection)
-districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
-#districts_tran = pd.read_csv("phonepe/Data_Map_Transaction4.csv")
+#districts_tran = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_Transaction4.csv")
+districts_tran = pd.read_csv("phonepe/Data_Map_Transaction4.csv")
 
 #query5 = 'select * from data_map_user_table5'
 #app_opening = pd.read_sql(query5, con=connection)
-app_opening = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
-#app_opening = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
+#app_opening = pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+app_opening = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
 
 #query6 = 'select * from data_aggregated_user_table6'
 #user_device = pd.read_sql(query6, con=connection)
-user_device = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv")
-#user_device = pd.read_csv("phonepe/Data_Aggregated_User_Table6.csv")
+#user_device = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_User_Table6.csv")
+user_device = pd.read_csv("phonepe/Data_Aggregated_User_Table6.csv")
 
 
 #Data Preprocessing for visualization
@@ -150,8 +150,8 @@ with Device_analysis:
 with payment_analysis:
     st.subheader('Payment type Analysis -> 2018 - 2022')
     #payment_mode = pd.read_sql(query1, con=connection)
-    payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-    #payment_mode = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
+    #payment_mode = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    payment_mode = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
     col1,col2,col3,col4 = st.columns(4)
     with col1:
 	    pie_pay_mode_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh','assam', 'bihar', 'chandigarh', 'chhattisgarh',
@@ -190,8 +190,8 @@ with transac_yearwise:
     with col4:    
             transac_values = st.selectbox('Please select the values to visualize', ('Total Transactions count', 'Total Amount'), key='transacvalues')
     #payment_mode_yearwise = pd.read_sql(query1, con=connection)
-    payment_mode_yearwise = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
-    #payment_mode_yearwise = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
+    #payment_mode_yearwise = pd.read_csv(r"E:\GUVI\phonepe\Data_Aggregated_Transaction_Table1.csv")
+    payment_mode_yearwise = pd.read_csv("phonepe/Data_Aggregated_Transaction_Table1.csv")
     new_df = payment_mode_yearwise.groupby(['State', 'Year', 'Quarter', 'Payment Mode']).sum()
     new_df = new_df.reset_index()
     chart = new_df[(new_df['State'] == transac_state) &(new_df['Payment Mode'] == transac_type) & (new_df['Quarter'] == transac__quater)]
@@ -216,8 +216,8 @@ with Overall_India_Analysisst:
     with col2:
     	#Bar chart of overall india registered and app opening
     	#overall_reg = pd.read_sql(query5,con=connection)
-    	overall_reg= pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
-    	#overall_reg = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
+    	#overall_reg= pd.read_csv(r"E:\GUVI\phonepe\Data_Map_User_Table5.csv")
+    	overall_reg = pd.read_csv("phonepe/Data_Map_User_Table5.csv")
     	overall_reg = overall_reg.groupby(['State','Year']).sum()
     	overall_reg.reset_index(inplace=True)
     	overall_reg = px.bar(overall_reg, x='Year',y=['Registered Users Count',"App Openings"],barmode='group',title='Phonepe installation from 2018 - 2022')
