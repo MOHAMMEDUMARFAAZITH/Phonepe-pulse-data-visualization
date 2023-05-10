@@ -6,3 +6,5 @@ notebook==6.4.12
 SQLAlchemy==1.4.39
 streamlit==1.18.1
 mysql-connector-python==8.0.32
+vega_datasets==0.9.0
+altair==4.1.0
