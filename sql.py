@@ -87,7 +87,7 @@ with st.container():
     Bar.update_layout(height=400,width=1500)    
     st.plotly_chart(Bar)
 
-geo_analysis, Device_analysis, payment_analysis, transac_yearwise,Overall_India_Analysisst = st.tabs(["Geographical analysis","Overall_India_Analysisst","User device analysis", "Payment Types analysis", "Transacion analysis of States"])
+geo_analysis, Device_analysis, payment_analysis, transac_yearwise,Overall_India_Analysisst = st.tabs(["Geographical analysis","User device analysis", "Payment Types analysis", "Transacion analysis of States","Overall_India_Analysisst"])
 
 with geo_analysis:
     st.subheader('Transaction analysis->State and Districtwise')
